@@ -1,0 +1,10 @@
+ select TR.ACTCODE,TR.ACTNOM,CASE WHEN CL.ROLCODE IS NULL THEN 0 ELSE 1 END CLIENT,CASE WHEN FR.ROLCODE IS NULL THEN 0 ELSE 1 END 
+FOURNISSEUR,
+ADR.ADRVILLE,ADR.ADRVOIE ,
+TR.ACTSIRET AS ACTEUR_NIF ,TR.ACTNUMRCM AS ACTEUR_RC, TR.NAFCODE AS "Code activité"
+FROM tralcprd.acteur TR  
+left join tralcprd.actrole CL on TR.actid=CL.actid and CL.rolcode='CLIENT'
+left join tralcprd.actrole FR on TR.actid=FR.actid and FR.rolcode='FOURN'
+inner join tralcprd.actadresse ACA on TR.actid=ACA.actid inner join tralcprd.adresse ADR on ACA.adrid=ADR.adrid and ACA.aadordre=1
+join tralcprd.AUDITECRITURE AE on AE.actid =TR.actid
+where TO_DATE(AECDTEXPLOITATION) > TO_DATE('21/05/2024')

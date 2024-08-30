@@ -1,0 +1,37 @@
+SELECT DISTINCT
+    Dossier.dosnum AS "Code Contrat",
+    Dossier.dosdtdeb AS "Date debut", 
+    Dossier.dosdtfin AS "Date fin", 
+    Dossier.dosdtcomite AS "Date accord",
+    Dossier.tpgcode AS "Jalon",  
+    acteur.actcode AS "Code acteur",
+    acteur.actlibcourt AS "Nom acteur", 
+    acteur.nafcode AS "Activite", 
+    acteur.acteffectif AS "NbrSalarie",
+    dosrubrique.drutauxfixe AS "TEG",
+    Dossier.dosnom AS "Intitule",
+    PAV4_JASPER_BO.F_GET_ACTOR_CODE(DOSSIER.DOSID,'AGENCE') AS "Agence",
+    DOSFINANCE.DFIMTTOTAL AS "Total montant materiels TTC",
+    ACTEUR.ACTSIRET AS "ACTEUR NIF" ,
+    ACTEUR.ACTNUMRCM AS "ACTEUR RC",
+    ADRESSE.ADRVOIE  AS "ADD VOIE ",
+    ADRESSE.ADRLIEUDIT AS "ADD LIEU",
+    ADRESSE.ADRVILLE AS "VILLE"
+FROM
+    dossier
+JOIN
+    dosacteur ON dosacteur.dosid = dossier.dosid
+JOIN
+    acteur ON dosacteur.actid = acteur.actid
+JOIN
+    dosrubrique ON Dossier.dosid = dosrubrique.dosid
+JOIN
+    DOSFINANCE ON DOSSIER.DOSID = DOSFINANCE.DOSID
+JOIN 
+    ACTADRESSE  ON acteur.ACTID = ACTADRESSE.ACTID
+JOIN 
+    ADRESSE  ON ACTADRESSE.ADRID = ADRESSE.ADRID
+WHERE
+    dosrubrique.druclasse = 'F'
+    AND dosacteur.rolcode = 'CLIENT'
+    AND DOSSIER.DOSDTDEB = DOSRUBRIQUE.DRUDTDEB;

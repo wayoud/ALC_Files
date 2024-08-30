@@ -1,0 +1,4 @@
+select  *
+from AUDITECRITURE
+where AECDTCOMPTABLE between '1/01/2024' and '25/07/2024' 
+order by AECDTCOMPTABLE desc
