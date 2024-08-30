@@ -1,0 +1,1 @@
+sqlplus TRALCPRD/TRES5PRG@ALCPRD @D:\Cassiopae\SelectMEF.sql exit

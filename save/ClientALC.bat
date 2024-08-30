@@ -1,0 +1,1 @@
+sqlplus AVALCPRD/prospect@ALCPRD @D:\Cassiopae\SelectClientALC.sql exit

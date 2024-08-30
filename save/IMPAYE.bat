@@ -1,0 +1,1 @@
+sqlplus TRALCPRD/TRES5PRG@ALCPRD @D:\Cassiopae\SelectIMPAYE.sql exit
