@@ -1,0 +1,8 @@
+alter table emplacement
+DROP CONSTRAINT PK_Emplacement_1;
+GO
+alter table emplacement
+ADD  CONSTRAINT PK_CompositePKTable PRIMARY KEY CLUSTERED (idemplacomplet, idsite)
+GO
+
+

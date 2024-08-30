@@ -1,0 +1,1 @@
+select * from all_source where upper(text) like '%$TEXT%';

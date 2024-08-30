@@ -1,0 +1,3 @@
+sur le serveur entrer cmd comme administrateur
+excuter
+schtasks /query /tn "Nom_de_la_tâche" /xml | findstr /C:"<Command>"

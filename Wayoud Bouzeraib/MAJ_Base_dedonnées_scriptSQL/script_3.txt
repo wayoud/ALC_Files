@@ -1,0 +1,4 @@
+CREATE TABLE param_codification_empla (
+    generateCodeEmplaAuto BIT DEFAULT 1 NOT NULL
+);
+INSERT INTO param_codification_empla (generateCodeEmplaAuto) VALUES (1);

@@ -1,0 +1,6 @@
+les modification sur le fichier sont:
+1-ajouter les quotes "" pour premier column
+2-supprimer les quote pour la deuxieme colonne 
+3- permutation des dates pour la 3eme et la quatrieme colonne
+4- la supression du premier zero sur la colonne 6, 9, 10
+5- pour la 11 eme colonne on enleve le 0 au milieu.

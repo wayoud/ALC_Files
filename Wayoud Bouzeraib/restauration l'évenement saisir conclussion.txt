@@ -1,0 +1,7 @@
+insert into dprworstep (DOSID, DPRVERSION, WORCODE, WSTORDER, DPWORDER, UTICODEINI, UTICODEEXEC, UTICODEEND, CREID, WSTDTEND, WSTDTEXEC, WSTDTINI, WSTSTATUS)
+values ((select max(dosid)from dossierprospect where dprnumero='PR14581'), 'FIN', 'WFANA', 8, 1, 'ORFI', 'ORFI', 'ORFI', null, sysdate, sysdate, sysdate,'INI');
+commit;
+
+select * from dprworstep where dosid = 25707 and worcode = 'WFANA' and wstorder = 8;
+update dprworstep set CREID = null , WSTSTATUS = 'INI', WSTDTEND = null 
+where dosid = 25707 and worcode = 'WFANA' and wstorder = 8;

@@ -1,0 +1,23 @@
+
+Problem:
+
+Bonjour
+
+Merci de basculer l’acteur  < HYDRO > Référence : < 007921 > en phase terminé , nous n’arrivons pas à ajouter un rôle pour faire le nécessaire
+
+Slts 
+
+Solution:
+
+select * from acteur where actcode='007921'; --- trouver acteur par réference
+select * from actphase where  PHACODE = 'TER'actid = 466; -- PHACODE = 'TER' -- chek actphase table
+select distinct PHACODE from actphase 
+
+update actphase set PHACODE = 'TER', JALCODE = '' where actid = 466; --update table to TER in phase
+commit
+Select constraint_name, constraint_type, table_name, r_constraint_name
+from all_constraints
+where constraint_name = 'FK_ASSOC_386969'
+
+
+select * from all_cons_columns where constraint_name = 'FK_ASSOC_386969'

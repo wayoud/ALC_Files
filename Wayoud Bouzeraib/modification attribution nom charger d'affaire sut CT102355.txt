@@ -1,0 +1,3 @@
+--  modifier l'attribution du nom sur systéme mettre rayd ABDELAZIZ au lieu de SIHAM OUDJHANE sur ct 102355
+select * from dprintervenant where dosid in (select distinct dosid from dossier where dosnum = '102355');
+select * from utilisateur where uticode = '00407'
